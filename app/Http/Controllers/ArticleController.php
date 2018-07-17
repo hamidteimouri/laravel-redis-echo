@@ -17,8 +17,8 @@ class ArticleController extends Controller
             $obj->description = request('description');
             $obj->save();
 
-//            event(new ArticleCreateEvent($obj));
-            broadcast(new ArticleCreateEvent($obj));
+            event(new ArticleCreateEvent($obj));
+//            broadcast(new ArticleCreateEvent($obj));
             return response()->json([
                 'msg' => 'ok shod'
             ]);

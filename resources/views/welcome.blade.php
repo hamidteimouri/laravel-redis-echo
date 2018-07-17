@@ -14,10 +14,23 @@
 <script src="{{asset('js/app.js')}}"></script>
 
 <script>
-    window.Echo.channel('myArticle').listen('.ArticleCreateEvent', function(res){
-                console.log(res.title);
-//                console.log('ssssss');
-            });
+    window.Echo.channel('myArticle').listen('.server.article.created', function (res) {
+
+        console.log(res);
+
+        console.log('before');
+        axios.post('/test', {
+            params: {
+                id: 25
+            }
+        }).then(function (res) {
+            console.log('my res');
+            console.log(res.data);
+        }).catch(function (err) {
+            console.log(err);
+        });
+        console.log('after');
+    });
 </script>
 <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
 
