@@ -12,13 +12,6 @@
 */
 
 Route::get('/', function () {
-    //$n = new \App\MyClass\MyData();
-    //dd($n->all());
-//    \MyData::set('hamid', 'yyyyyy');
-//    $d = \MyData::all();
-//    dd($d);
     return view('welcome');
-
-
 });
 Route::get('/admin/article/create', ['as' => 'article.create', 'uses' => 'ArticleController@create']);
