@@ -15,10 +15,8 @@
 
 <script>
     window.Echo.channel('myArticle').listen('.server.article.created', function (res) {
-
-        console.log(res);
-
         console.log('before');
+        console.log(res);
         axios.post('/test', {
             params: {
                 id: 25

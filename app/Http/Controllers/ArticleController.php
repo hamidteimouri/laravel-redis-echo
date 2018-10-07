@@ -20,7 +20,7 @@ class ArticleController extends Controller
             event(new ArticleCreateEvent($obj));
 //            broadcast(new ArticleCreateEvent($obj));
             return response()->json([
-                'msg' => 'ok shod'
+                'msg' => 'Successfully created'
             ]);
         } catch (\Exception $ex) {
             dd($ex);
