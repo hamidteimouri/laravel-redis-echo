@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-<?php auth()->loginUsingId(1); ?>
+<?php auth()->logout(); auth()->loginUsingId(1); ?>
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
@@ -17,12 +17,12 @@
 
 <script>
     window.Echo.private('myArticle').listen('.server.article.created', function (res) {
-        console.log('we are in private channel');
-        console.log(res);
+        console.log('we are in (private) channel');
+        //console.log(res);
     });
-    window.Echo.channel('myArticle2').listen('.server.article.created', function (res) {
-        console.log('we are in public channel');
-        console.log(res);
+    window.Echo.channel('myArticlePublic').listen('.server.article.created', function (res) {
+        console.log('we are in (public) channel');
+        //console.log(res);
     });
 </script>
 <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
