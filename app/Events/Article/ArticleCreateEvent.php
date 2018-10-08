@@ -35,7 +35,8 @@ class ArticleCreateEvent implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new Channel('myArticle');
+        return [new PrivateChannel('myArticle'), new Channel('myArticle2')];
+        //return new PrivateChannel('myArticle');
     }
 
 

@@ -18,7 +18,7 @@ class ArticleController extends Controller
             $obj->save();
 
             event(new ArticleCreateEvent($obj));
-//            broadcast(new ArticleCreateEvent($obj));
+            // broadcast(new ArticleCreateEvent($obj));
             return response()->json([
                 'msg' => 'Successfully created'
             ]);

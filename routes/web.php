@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/article/create', ['as' => 'article.create', 'uses' => 'ArticleController@create']);
+Route::get('/article/create', ['as' => 'article.store', 'uses' => 'ArticleController@create']);
 Route::post('/test', function () {
     return response()->json([
         'all_req' => request()->all()
