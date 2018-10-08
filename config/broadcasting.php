@@ -44,7 +44,7 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
-            'encrypted' => false,
+            //'encrypted' => false,
         ],
 
         'log' => [
