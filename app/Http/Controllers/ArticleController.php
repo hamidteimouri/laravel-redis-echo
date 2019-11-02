@@ -23,7 +23,7 @@ class ArticleController extends Controller
                 'msg' => 'Successfully created'
             ]);
         } catch (\Exception $ex) {
-            dd($ex);
+            dd($ex->getMessage());
             return response()->json([
                 'error' => $ex
             ]);
