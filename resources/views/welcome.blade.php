@@ -10,7 +10,16 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>welcome {{auth()->user()->name}}</h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>welcome {{auth()->user()->name}}</h1>
+        </div>
+    </div>
+</div>
+<br>
+<br>
 <div id="example"></div>
 <div id="example2"></div>
 <script src="{{asset('js/app.js')}}"></script>
